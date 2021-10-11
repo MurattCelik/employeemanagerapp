@@ -1,0 +1,48 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+services:
+  db:
+    container_name: postgresql-standalone
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: miradqo
+      POSTGRES_USER: miradqo
+      POSTGRES_DB: employee
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+
+
+
+
+##version: '3.1'
+##services:
+##  db:
+##    image: mysql
+##    restart: always
+##    ports:
+##      - 3306:3306
+##    environment:
+##      MYSQL_USER_PASSWORD: miradqo
+##      MYSQL_USER: miradqo
+#version: '3.3'
+#services:
+#  db:
+#    image: mysql
+#    restart: always
+#    environment:
+#      MYSQL_USER: miradqo
+#      # You can use whatever password you like
+#      MYSQL_PASSWORD: miradqo
+#      # Password for root access
+#      MYSQL_ROOT_PASSWORD: miradqo
+#    ports:
+#      - '3306:3306'
